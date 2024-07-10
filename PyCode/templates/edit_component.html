@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Component</title>
+</head>
+<body>
+    <h1>Edit Component</h1>
+    <form method="post">
+        <label for="index">Index:</label>
+        <input type="text" id="index" name="index" value="{{ component.index }}">
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ component.name }}">
+        <br>
+        <label for="history_config">History Config:</label>
+        <input type="text" id="history_config" name="history_config" value="{{ component.history_config }}">
+        <br>
+        <label for="map_config_ids">Map Config IDs:</label>
+        <input type="text" id="map_config_ids" name="map_config_ids" value="{{ ','.join(component.map_config_ids) if component.map_config_ids else '' }}">
+        <br>
+        <label for="map_config">Map Config:</label>
+        <input type="text" id="map_config" name="map_config" value="{{ component.map_config }}">
+        <br>
+        <label for="chart_config">Chart Config:</label>
+        <input type="text" id="chart_config" name="chart_config" value="{{ component.chart_config }}">
+        <br>
+        <label for="map_filter">Map Filter:</label>
+        <input type="text" id="map_filter" name="map_filter" value="{{ component.map_filter }}">
+        <br>
+        <label for="time_from">Time From:</label>
+        <input type="text" id="time_from" name="time_from" value="{{ component.time_from }}">
+        <br>
+        <label for="time_to">Time To:</label>
+        <input type="text" id="time_to" name="time_to" value="{{ component.time_to }}">
+        <br>
+        <label for="update_freq">Update Frequency:</label>
+        <input type="number" id="update_freq" name="update_freq" value="{{ component.update_freq }}">
+        <br>
+        <label for="update_freq_unit">Update Frequency Unit:</label>
+        <input type="text" id="update_freq_unit" name="update_freq_unit" value="{{ component.update_freq_unit }}">
+        <br>
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source" value="{{ component.source }}">
+        <br>
+        <label for="short_desc">Short Description:</label>
+        <textarea id="short_desc" name="short_desc">{{ component.short_desc }}</textarea>
+        <br>
+        <label for="long_desc">Long Description:</label>
+        <textarea id="long_desc" name="long_desc">{{ component.long_desc }}</textarea>
+        <br>
+        <label for="use_case">Use Case:</label>
+        <textarea id="use_case" name="use_case">{{ component.use_case }}</textarea>
+        <br>
+        <label for="links">Links:</label>
+        <input type="text" id="links" name="links" value="{{ ','.join(component.links) if component.links else '' }}">
+        <br>
+        <label for="contributors">Contributors:</label>
+        <input type="text" id="contributors" name="contributors" value="{{ ','.join(component.contributors) if component.contributors else '' }}">
+        <br>
+        <label for="query_type">Query Type:</label>
+        <input type="text" id="query_type" name="query_type" value="{{ component.query_type }}">
+        <br>
+        <label for="query_chart">Query Chart:</label>
+        <textarea id="query_chart" name="query_chart">{{ component.query_chart }}</textarea>
+        <br>
+        <label for="query_history">Query History:</label>
+        <textarea id="query_history" name="query_history">{{ component.query_history }}</textarea>
+        <br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

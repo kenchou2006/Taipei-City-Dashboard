@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Components List</title>
+</head>
+<body>
+    <h1>Components List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Index</th>
+                <th>Name</th>
+                <th>History Config</th>
+                <th>Map Config Ids</th>
+                <th>Map Config</th>
+                <th>Chart Config</th>
+                <th>Map Filter</th>
+                <th>Time From</th>
+                <th>Time To</th>
+                <th>Update Frequency</th>
+                <th>Update Frequency Unit</th>
+                <th>Source</th>
+                <th>Short Description</th>
+                <th>Long Description</th>
+                <th>Use Case</th>
+                <th>Links</th>
+                <th>Contributors</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Query Type</th>
+                <th>Query Chart</th>
+                <th>Query History</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for component in components %}
+            <tr>
+                <td>{{ component.id }}</td>
+                <td>{{ component.index }}</td>
+                <td>{{ component.name }}</td>
+                <td>{{ component.history_config }}</td>
+                <td>{{ component.map_config_ids }}</td>
+                <td>{{ component.map_config }}</td>
+                <td>{{ component.chart_config }}</td>
+                <td>{{ component.map_filter }}</td>
+                <td>{{ component.time_from }}</td>
+                <td>{{ component.time_to }}</td>
+                <td>{{ component.update_freq }}</td>
+                <td>{{ component.update_freq_unit }}</td>
+                <td>{{ component.source }}</td>
+                <td>{{ component.short_desc }}</td>
+                <td>{{ component.long_desc }}</td>
+                <td>{{ component.use_case }}</td>
+                <td>{{ component.links }}</td>
+                <td>{{ component.contributors }}</td>
+                <td>{{ component.created_at }}</td>
+                <td>{{ component.updated_at }}</td>
+                <td>{{ component.query_type }}</td>
+                <td>{{ component.query_chart }}</td>
+                <td>{{ component.query_history }}</td>
+                <td>
+                    <a href="{{ url_for('edit_component', id=component.id) }}">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
